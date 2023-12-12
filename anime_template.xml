@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE animes [
+  <!ELEMENT animes (anime+)>
+  <!ELEMENT anime (title, releaseDate, ageRating, authors, director, studio, genres, description)>
+
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT releaseDate (#PCDATA)>
+  <!ELEMENT ageRating (#PCDATA)>
+  <!ELEMENT authors (author+)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT director (#PCDATA)>
+  <!ELEMENT studio (#PCDATA)>
+  <!ELEMENT genres (genre+)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+]>
+
+<animes>
+  <anime>
+    <title>Animation Title</title>
+    <releaseDate>2023-12-08</releaseDate>
+    <ageRating>General Audiences</ageRating>
+
+    <authors>
+        <author>Author1</author>
+        <author>Author2</author>
+    </authors>
+
+    <director>Director</director>
+
+    <studio>Hello Animation</studio>
+
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+    </genres>
+
+    <description>A brief description of the animation.</description>
+
+  </anime>
+</animes>
