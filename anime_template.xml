@@ -2,29 +2,39 @@
 
 <!DOCTYPE animes [
   <!ELEMENT animes (anime+)>
-  <!ELEMENT anime (title, releaseDate, ageRating, authors, director, studio, genres, description)>
+  <!ELEMENT anime (title, releaseDate, authors, director, studio, genres, description)>
+  <!ATTLIST anime ageRating (限制級|輔導級|保護級|普遍級) "普遍級" >
 
   <!ELEMENT title (#PCDATA)>
+  
   <!ELEMENT releaseDate (#PCDATA)>
-  <!ELEMENT ageRating (#PCDATA)>
+  <!ATTLIST releaseDate
+    format CDATA "^\d{4}-\d{2}-\d{2}$"
+  >
+
+
   <!ELEMENT authors (author+)>
+
   <!ELEMENT author (#PCDATA)>
+
   <!ELEMENT director (#PCDATA)>
+  
   <!ELEMENT studio (#PCDATA)>
-  <!ELEMENT genres (genre+)>
+
+  <!ELEMENT genres (genre*)>
   <!ELEMENT genre (#PCDATA)>
+  
   <!ELEMENT description (#PCDATA)>
 ]>
 
 <animes>
-  <anime>
+  <anime ageRating="保護級">
     <title>Animation Title</title>
     <releaseDate>2023-12-08</releaseDate>
-    <ageRating>General Audiences</ageRating>
 
     <authors>
-        <author>Author1</author>
-        <author>Author2</author>
+      <author>Author1</author>
+      <author>Author2</author>
     </authors>
 
     <director>Director</director>
@@ -37,6 +47,5 @@
     </genres>
 
     <description>A brief description of the animation.</description>
-
   </anime>
 </animes>

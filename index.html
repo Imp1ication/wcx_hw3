@@ -3,26 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>動畫資料產生器</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Header</h1>
-    </header>
+    <h1>歡迎使用動畫資訊 XML 產生器</h1>
+    <form id="animationForm" action="javascript:void(0);">
+      <!-- Title -->
+      <label for="title">作品名稱</label>
+      <input type="text" id="title" name="title" required="required" />
 
-    <section>
-      <div class="section-header">
-        <h2>section title</h2>
+      <!-- Release Date -->
+      <label for="releaseDate">首播日期</label>
+      <input
+        type="date"
+        id="releaseDate"
+        name="releaseDate"
+        pattern="\d{4}-\d{2}-\d{2}"
+        required="required"
+      />
+
+      <!-- Age Rating -->
+      <label for="ageRating">分級</label>
+      <select id="ageRating" name="ageRating" required="required">
+        <option value="普遍級">普遍級</option>
+        <option value="保護級">保護級</option>
+        <option value="輔導級">輔導級</option>
+        <option value="限制級">限制級</option>
+      </select>
+
+      <!-- Authors -->
+      <label for="authors">原著作者 (以逗號分隔)</label>
+      <input type="text" id="authors" name="authors" required="required" />
+
+      <!-- Director -->
+      <label for="director">導演監督</label>
+      <input type="text" id="director" name="director" required="required" />
+
+      <!-- Studio -->
+      <label for="studio">製作廠商</label>
+      <input type="text" id="studio" name="studio" required="required" />
+
+      <!-- Genres -->
+      <label for="genres">作品類型 (以逗號分隔)</label>
+      <input type="text" id="genres" name="genres" required="required" />
+
+      <!-- Description -->
+      <label for="description">作品描述</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required="required"
+      ></textarea>
+
+      <!-- Submit Button -->
+      <div id="buttonContainer">
+        <button type="button" onclick="validateInput()">產生 XML</button>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-        voluptates? Facilis, suscipit beatae minima, dolor nemo corporis,
-        voluptatem fugiat repudiandae consequatur quos dolorum? Asperiores ab
-        sed repellat officia totam voluptates!
-      </p>
-    </section>
-
-    <script src="main.js"></script>
+    </form>
   </body>
 </html>
